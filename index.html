@@ -1,29 +1,590 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- CSS File Link -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
-    <title>Murdeshwar Booking</title>
-</head>
-<body>
-    
+    <title>Murudeshwar Booking</title>
+  </head>
+  <body>
     <!-- =========================
      HEADER
     ===========================-->
 
-    <header>
-        <a href="#" class="logo">
-            
-        </a>
+    <header id="header" class="header">
+      <a href="#" class="logo" onclick="resetHeader()">
+        <img src="./images/logo-1.png" alt="image" />
+      </a>
+
+      <ul class="nav__list" id="nav-list">
+        <li class="nav__item">
+          <a href="#" class="nav__link" onclick="resetHeader()">home</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link" data-target="about">about</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link" data-target="sites">sites</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link" data-target="portfolio">portfolio</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link" data-target="contact">contact</a>
+        </li>
+      </ul>
+
+      <div class="menu" id="nav-toggle">
+        <ion-icon name="apps-outline"></ion-icon>
+      </div>
     </header>
 
+    <!-- =========================
+    Banner Section
+    ===========================-->
+
+    <div class="banner">
+      <div class="bg-slide slide-1 active">
+        <div class="content">
+          <h1>Scuba Diving</h1>
+          <p>
+            Thrilling scuba diving experiences, providing guided underwater
+            adventures in the beautiful Murudeshwar region.
+          </p>
+        </div>
+
+        <div class="circle bg">
+          <img src="./images/scuba.jpg" alt="" />
+          <div class="circle large">
+            <img src="./images/scuba.jpg" alt="" />
+            <div class="circle small">
+              <img src="./images/scuba.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slide slide-2">
+        <div class="content">
+          <h1>Hotel</h1>
+          <p>
+            Comfortable hotel accommodations, providing the perfect stay in the
+            scenic Murudeshwar region.
+          </p>
+        </div>
+
+        <div class="circle bg">
+          <img src="./images/hotel.jpg" alt="" />
+          <div class="circle large">
+            <img src="./images/hotel.jpg" alt="" />
+            <div class="circle small">
+              <img src="./images/hotel.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slide slide-3">
+        <div class="content">
+          <h1>Honnavar backwater boating</h1>
+          <p>
+            Guided boating tours, providing unforgettable experiences at the
+            stunning backwater of Honnavar.
+          </p>
+        </div>
+
+        <div class="circle bg">
+          <img src="./images/backwater.avif" alt="" />
+          <div class="circle large">
+            <img src="./images/backwater.avif" alt="" />
+            <div class="circle small">
+              <img src="./images/backwater.avif" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slide slide-4">
+        <div class="content">
+          <h1>Car rental</h1>
+          <p>
+            Hassle-free car rental services, providing reliable vehicles for a
+            comfortable journey through Murudeshwar.
+          </p>
+        </div>
+
+        <div class="circle bg">
+          <img src="./images/taxi.jpg" alt="" />
+          <div class="circle large">
+            <img src="./images/taxi.jpg" alt="" />
+            <div class="circle small">
+              <img src="./images/taxi.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slide slide-5">
+        <div class="content">
+          <h1>Scotty Rental</h1>
+          <p>
+            Murudeshwar Booking offers affordable, reliable scooty rentals for
+            exploring Murudeshwar with flexible booking options.
+          </p>
+        </div>
+
+        <div class="circle bg">
+          <img src="./images/scotty.jpg" alt="" />
+          <div class="circle large">
+            <img src="./images/scotty.jpg" alt="" />
+            <div class="circle small">
+              <img src="./images/scotty.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="slide-loader">
+        <li>
+          <a class="slide-btn active" data-target="slide-1"> 1 </a>
+        </li>
+        <li>
+          <a class="slide-btn" data-target="slide-2"> 2 </a>
+        </li>
+        <li>
+          <a class="slide-btn" data-target="slide-3"> 3 </a>
+        </li>
+        <li>
+          <a class="slide-btn" data-target="slide-4"> 4 </a>
+        </li>
+        <li>
+          <a class="slide-btn" data-target="slide-5"> 5 </a>
+        </li>
+      </ul>
+
+      <div class="lead">
+        <svg viewBox="0 0 100 100" width="100" height="100">
+          <defs>
+            <path
+              id="circle"
+              d="M
+                50,
+                50
+                m
+                -37
+                ,
+                0
+                a
+                37,37
+                0
+                1,1
+                74,0
+                a
+                37,37
+                0
+                1,1
+                -74,0"
+            />
+          </defs>
+          <text font-size="17">
+            <textPath xlink:href="#circle">
+              Fun, freedom, and adventure on every ride...
+            </textPath>
+          </text>
+        </svg>
+        <a href="#" class="move-down" onclick="initNavigation()">
+          <ion-icon name="chevron-down-outline"></ion-icon>
+        </a>
+      </div>
+    </div>
+
+    <main>
+      <!-- =========================
+    About Section
+    ===========================-->
+      <section id="about" class="about">
+        <div class="container">
+          <div>
+            <h1>About Us</h1>
+          </div>
+          <div class="row grid">
+            <div class="img-box">
+              <img src="./images/boating_2.jpg" alt="" class="img-fluid" />
+              <img src="./images/boating.jpg" alt="" class="corner-img" />
+            </div>
+
+            <div class="col-2">
+              <img src="./images/bg-tree.png" alt="" class="section-bg-img" />
+              <h4>Explore, Discover, and Experience Murudeshwar.</h4>
+              <p>
+                Murudeshwar Booking offers a diverse range of exciting
+                activities to make your visit to Murudeshwar unforgettable. From
+                thrilling scuba diving adventures to breathtaking nature
+                sightseeing, we provide unforgettable experiences for all
+                travelers. Our hotel booking services ensure you have a
+                comfortable stay, while our car rental and cycling services
+                allow you to explore the scenic beauty at your own pace.
+              </p>
+              <p>
+                For those who love culture and history, Murudeshwar Booking also
+                offers heritage sightseeing tours, showcasing the rich legacy of
+                the region. Whether you're relaxing in nature, indulging in
+                water sports, or discovering local heritage, we cater to every
+                type of traveler. Explore Murudeshwar like never before with our
+                all-inclusive travel services, designed for your comfort and
+                enjoyment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+    Sites Section
+    ===========================-->
+
+      <section id="sites" class="sites">
+        <div class="container">
+          <div class="row">
+            <h1>Sites to Visit</h1>
+          </div>
+          <div class="grid site__visit">
+            <div>
+              <div class="card">
+                <div class="img-box">
+                  <img src="./images/idagunji.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <h4>Idagunji Temple</h4>
+                  <p>
+                    Idagunji Temple, located in Karnataka, is a revered Hindu
+                    pilgrimage site dedicated to Lord Ganesha. Known for its
+                    peaceful ambiance, it attracts devotees for blessings and
+                    spiritual serenity.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card">
+                <div class="img-box">
+                  <img src="./images/m_market.png" alt="" />
+                </div>
+                <div class="details">
+                  <h4>Murudeshwar Market</h4>
+                  <p>
+                    Murudeshwar Market offers a vibrant shopping experience with
+                    local handicrafts, souvenirs, clothing, and fresh produce.
+                    It’s the perfect place to explore Murudeshwar's culture and
+                    traditions.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card">
+                <div class="img-box">
+                  <img src="./images/Murudeshwara-Temple.webp" alt="" />
+                </div>
+                <div class="details">
+                  <h4>Murudeshwar Temple</h4>
+                  <p>
+                    Murdeshwar Temple, with its stunning Shiva statue and
+                    coastal beauty, is a significant religious landmark, drawing
+                    visitors for both its divine atmosphere and breathtaking
+                    vistas.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card">
+                <div class="img-box">
+                  <img src="./images/Netrani_Island.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <h4>Netrani Island</h4>
+                  <p>
+                    Netrani Island, often called Pigeon Island, is a beautiful
+                    spot for scuba diving, offering crystal-clear waters and
+                    diverse marine life, perfect for adventure seekers.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card">
+                <div class="img-box">
+                  <img src="./images/statue_park.avif" alt="" />
+                </div>
+                <div class="details">
+                  <h4>Statue Park</h4>
+                  <p>
+                    Murudeshwar Statue Park features the world’s second-largest
+                    statue of Lord Shiva, surrounded by lush gardens. It’s a
+                    serene spot for spiritual reflection and scenic views.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card">
+                <div class="img-box">
+                  <img src="./images/m_beach.avif" alt="" />
+                </div>
+                <div class="details">
+                  <h4>Murudeshwar Beach</h4>
+                  <p>
+                    Murudeshwar Beach offers a serene coastal experience with
+                    golden sands, clear waters, and stunning views of the
+                    Arabian Sea, making it perfect for relaxation and water
+                    activities.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card">
+                <div class="img-box">
+                  <img src="./images/rajago.jpg" alt="" />
+                </div>
+                <div class="details">
+                  <h4>Rajagopura</h4>
+                  <p>
+                    Rajagopuram , located in Murudeshwar, is renowned for its
+                    towering 22-story gopuram (gateway), offering stunning views
+                    and spiritual significance, making it a must-visit landmark.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+    Portfolio Section
+    ===========================-->
+
+      <section id="portfolio" class="portfolio">
+        <div class="container">
+          <div class="row">
+            <h1>Our Portfolio</h1>
+          </div>
+
+          <div class="work__filters">
+            <span class="work__item active-work" data-filter="all">All</span>
+            <span class="work__item" data-filter=".hotel">Hotel</span>
+            <span class="work__item" data-filter=".backwater"
+              >Backwater Boating</span
+            >
+            <span class="work__item" data-filter=".car">Car Rental</span>
+            <span class="work__item" data-filter=".scotty">Scotty Rental</span>
+          </div>
+
+          <div class="work__container grid">
+            <!-- ///////////////////////// -->
+            <div class="work__card mix backwater">
+              <img src="./images/backwater.avif" alt="" class="work__img" />
+
+              <h3 class="work__title">Backwater Boating</h3>
+            </div>
+            <!-- ///////////////////////// -->
+
+            <div class="work__card mix scuba">
+              <img src="./images/scuba1.JPG" alt="" class="work__img" />
+
+              <h3 class="work__title">Scuba Diving</h3>
+            </div>
+
+            <!-- ///////////////////////// -->
+            <div class="work__card mix hotel">
+              <img src="./images/hotel1.jpg" alt="" class="work__img" />
+
+              <h3 class="work__title">Hotel</h3>
+            </div>
+
+            <!-- ///////////////////////// -->
+            <div class="work__card mix backwater">
+              <img src="./images/backwater1.jpg" alt="" class="work__img" />
+
+              <h3 class="work__title">Backwater Boating</h3>
+            </div>
+
+            <!-- ///////////////////////// -->
+            <div class="work__card mix car">
+              <img src="./images/car1.jpeg" alt="" class="work__img" />
+
+              <h3 class="work__title">Car Rental</h3>
+            </div>
+
+            <!-- ///////////////////////// -->
+            <div class="work__card mix scotty">
+              <img src="./images/scotty.jpg" alt="" class="work__img" />
+
+              <h3 class="work__title">Scotty Rental</h3>
+            </div>
+
+            <!-- ////////////////////////// -->
+
+            <div class="work__card mix scuba">
+              <img src="./images/scuba2.JPG" alt="" class="work__img" />
+
+              <h3 class="work__title">Scuba Diving</h3>
+            </div>
+
+            <!-- ///////////////////////// -->
+            <div class="work__card mix hotel">
+              <img src="./images/hotel2.jpg" alt="" class="work__img" />
+
+              <h3 class="work__title">Hotel</h3>
+            </div>
+
+            <!-- ///////////////////////// -->
+            <div class="work__card mix backwater">
+              <img src="./images/backwater2.jpg" alt="" class="work__img" />
+
+              <h3 class="work__title">Backwater Boating</h3>
+            </div>
+
+            <!-- ///////////////////////// -->
+            <div class="work__card mix car">
+              <img src="./images/car2.jpg" alt="" class="work__img" />
+
+              <h3 class="work__title">Car Rental</h3>
+            </div>
+
+            <!-- ///////////////////////// -->
+            <div class="work__card mix scotty">
+              <img src="./images/scotty1.jpg" alt="" class="work__img" />
+
+              <h3 class="work__title">Scotty Rental</h3>
+            </div>
+
+            <!-- ////////////////////////// -->
+
+            <div class="work__card mix scuba">
+              <img src="./images/scuba3.JPG" alt="" class="work__img" />
+
+              <h3 class="work__title">Scuba Diving</h3>
+            </div>
+
+            <!-- ///////////////////////// -->
+            <div class="work__card mix hotel">
+              <img src="./images/hotel3.jpg" alt="" class="work__img" />
+
+              <h3 class="work__title">Hotel</h3>
+            </div>
+
+            <!-- ///////////////////////// -->
+            <div class="work__card mix backwater">
+              <img src="./images/backwater3.jpeg" alt="" class="work__img" />
+
+              <h3 class="work__title">Backwater Boating</h3>
+            </div>
+
+            <!-- ///////////////////////// -->
+            <div class="work__card mix hotel">
+              <img src="./images/hotel5.jpg" alt="" class="work__img" />
+
+              <h3 class="work__title">Hotel</h3>
+            </div>
+
+            <!-- ///////////////////////// -->
+            <div class="work__card mix car">
+              <img src="./images/car3.jpg" alt="" class="work__img" />
+
+              <h3 class="work__title">Car Rental</h3>
+            </div>
+
+            <!-- ///////////////////////// -->
+            <div class="work__card mix scotty">
+              <img src="./images/scotty2.jpg" alt="" class="work__img" />
+
+              <h3 class="work__title">Scotty Rental</h3>
+            </div>
+
+            <!-- ///////////////////////// -->
+            <div class="work__card mix hotel">
+              <img src="./images/hotel4.jpg" alt="" class="work__img" />
+
+              <h3 class="work__title">Hotel</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- =========================
+    Contact Section
+    ===========================-->
+
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="row">
+            <h1>Contact Us</h1>
+          </div>
+
+          <!-- Insert your map here -->
+
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15478.991728854697!2d74.48239082758501!3d14.092051843380167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbc46d192e0edad%3A0x87c516bd6653efe1!2sMurdeshwar%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1739198195841!5m2!1sen!2sin"
+              width="100%"
+              height="370px"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <div class="contact__us">
+            <div class="info">
+              <div class="address">
+                <ion-icon name="navigate-outline"></ion-icon>
+                <h4>Location:</h4>
+                <p>Main Road, Murudeshwar, Bhatkal, 581350</p>
+              </div>
+              <div class="email">
+                <ion-icon name="mail-outline"></ion-icon>
+                <h4>Email:</h4>
+                <p>support@murdeshwarbooking.com</p>
+              </div>
+              <div class="phone">
+                <ion-icon name="call-outline"></ion-icon>
+                <h4>Call:</h4>
+                <p>+917700887778</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ION ICON  -->
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!--=============== MIXITUP FILTER ===============-->
+    <script src="./mixitup.min.js"></script>
 
     <!-- JavaScript File Link -->
     <script src="./main.js"></script>
-
-</body>
+  </body>
 </html>
